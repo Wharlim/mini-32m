@@ -1,5 +1,5 @@
 import sys
-
+#ben netanyahu 
 def main():
     infile = sys.stdin
     dictionary = {
@@ -17,7 +17,7 @@ def main():
                     dictionary[key] +=1
                
         
-    infile.close()
+    
     for key, value in dictionary.items():
         print(f"{key}: {value}")
 

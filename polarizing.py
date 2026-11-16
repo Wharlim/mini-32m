@@ -31,19 +31,19 @@ def main():
                 dictionary1[movie_id][0]+=1 
                 dictionary1[movie_id][1]+=(rating)
                 dictionary1[movie_id][3].append(rating)
-    infile.close()
+    
 
-    infile = open("movies.tsv", "r")
-    header = infile.readline()
-    for line in infile:
-        line = line.removesuffix("\n")
-        row = line.split("\t")
-        movie_id = row[0]
-        title = row[1]
-        if dictionary1[movie_id][0] >= 100:
-            dictionary1[movie_id][2] = title
+    with open("movies.tsv", "r") as infile:
+        header = infile.readline()
+        for line in infile:
+            line = line.removesuffix("\n")
+            row = line.split("\t")
+            movie_id = row[0]
+            title = row[1]
+            if dictionary1[movie_id][0] >= 100:
+                dictionary1[movie_id][2] = title
 
-    infile.close()
+
 
     highestt_std_dev = 0.0
     for key in dictionary1.keys():
